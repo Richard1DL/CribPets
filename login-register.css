@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('images/cats-gif-2.gif');
+    font-family: 'Roboto Slab', serif;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #222;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3); /* Opacidad del 30% */
+    z-index: -1;
+    pointer-events: none;
+}
+
+header {
+    background-color: rgb(101, 67, 33);
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    padding: 20px;
+    gap: 27px;
+}
+
+header h4 {
+    color: white;
+    font-size: 2.2em;
+    text-align: center;
+    flex-grow: 1;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+header ul li a:hover {
+    color: fuchsia;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0 35px;
+    height: 100%;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+header .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 60%;
+}
+
+header .auth-buttons a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+}
+
+header .auth-buttons .login-button {
+    background-color: transparent;
+    color: white;
+}
+
+header .auth-buttons .login-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+header .auth-buttons .register-button {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+header .auth-buttons .register-button:hover {
+    background-color: #0056b3; /* Un tono más oscuro al pasar el mouse */
+    border-color: #0056b3;
+}
+
+.main-nav ul {
+    display: flex; /* Muestra los ítems de navegación en fila */
+    gap: 20px; /* Tu espacio entre enlaces */
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 20px; /* Tu padding existente */
+    margin: 0;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: white; /* Tu color de enlaces */
+    font-size: 20px; /* Tu tamaño de fuente */
+    padding: 10px 0; /* Tu padding existente */
+    transition: color 0.3s ease; /* Tu transición existente */
+}
+
+.main-nav ul li a:hover {
+    color: fuchsia; /* Tu hover existente */
+}
+
+.hamburger-menu-btn {
+    display: none; /* Esto lo oculta en pantallas grandes */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 1001; /* Asegura que esté por encima de todo */
+}
+
+/* Estilos de las tres líneas del icono de hamburguesa */
+.hamburger-icon {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white; /* Color de las líneas de la hamburguesa */
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-container img {
+    width: 50px;
+    height: auto;
+    display: block;
+    margin-right: 10px;
+}
+
+.logo-container h1 {
+    color: white;
+    font-size: 26px;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.logo-container h5 {
+    color: white;
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.nav-and-button-group {
+    display: flex;
+    align-items: center;
+}
+
+/* Contenedor principal de los formularios en la página */
+.auth-page-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* Ocupa el resto de la altura de la ventana (100vh - altura del header) */
+    padding: 20px;
+    position: relative; /* Para el z-index */
+    z-index: 1; /* Asegura que el contenido esté por encima del gif de fondo */
+    box-sizing: border-box; /* Incluye padding en el tamaño */
+}
+
+/* El contenedor de la caja que alberga ambos formularios */
+.auth-container {
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo blanco semi-transparente */
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 450px; /* Ancho máximo de la caja del formulario */
+    width: 100%; /* La caja ocupará todo el ancho disponible hasta el max-width */
+    text-align: center;
+    position: relative; /* Para posicionar los formularios dentro de ella */
+    overflow: hidden; /* Para ocultar partes de los formularios al transicionar */
+    min-height: 400px; /* Altura mínima para evitar saltos */
+}
+
+/* Estilos para cada caja de formulario individual (Login y Register) */
+.form-box {
+    position: absolute; /* Permite posicionarlos uno encima del otro */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    background-color: rgba(255, 255, 255, 0.95); /* Fondo para cada formulario */
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Transición suave */
+    opacity: 0; /* Oculto por defecto */
+    transform: translateX(100%); /* Desplazado a la derecha por defecto */
+    box-sizing: border-box;
+}
+
+.form-box h2 {
+    font-size: 2.2em;
+    color: #4a2a10;
+    margin-bottom: 25px;
+}
+
+.form-box form {
+    width: 100%; /* El formulario ocupa todo el ancho de su caja */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre grupos de input */
+}
+
+.input-group {
+    text-align: left; /* Alinea etiquetas a la izquierda */
+    width: 100%;
+}
+
+.input-group label {
+    display: block; /* Etiqueta en su propia línea */
+    margin-bottom: 8px;
+    color: #654321;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px; /* Espacio antes del botón */
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.switch-form-text {
+    margin-top: 20px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.switch-form-text a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.switch-form-text a:hover {
+    text-decoration: underline;
+}
+
+/* --- CONTROL DE VISIBILIDAD DE LOS FORMULARIOS --- */
+.form-box.active {
+    opacity: 1;
+    transform: translateX(0); /* Mueve el formulario activo a la posición central */
+    position: relative; /* Cambia a relative para que el contenedor pueda ajustar su altura */
+}
+
+/* El formulario inactivo se desplaza a la izquierda (para que el activo venga de la derecha) */
+.form-box:not(.active) {
+    transform: translateX(-100%); /* Mueve el formulario inactivo a la izquierda */
+}
+
+
+/* --- AJUSTES RESPONSIVOS PARA MÓVILES (dentro de tu @media (max-width: 768px)) --- */
+@media (max-width: 768px) {
+    /* Tu header ya tiene estilos responsivos, no lo toques aquí a menos que sea necesario para la página de auth */
+    header {
+        display: flex;
+        flex-direction: row; /* Asegura que los elementos hijos estén en fila */
+        flex-wrap: wrap; /* Permitir que los elementos salten a la siguiente línea si no caben */
+        justify-content: space-between; /* ¡IMPORTANTE! Empuja logo a izq, nav-and-button-group a der */
+        align-items: center; /* Alinea verticalmente los elementos en la primera fila */
+        height: auto; 
+        padding: 15px 20px; 
+        gap: 0; /* Quitar gap en el header principal */
+    }
+
+    header .logo-container {
+        width: auto;
+        max-width: calc(100% - 80px); /* Deja espacio para la hamburguesa a la derecha */
+        flex-shrink: 0;
+        margin-bottom: 0;
+    }
+
+    .logo-container h1 { font-size: 22px; }
+    .logo-container h5 { font-size: 10px; }
+
+    header .nav-and-button-group {
+        width: auto; /* Ocupa solo el espacio de la hamburguesa */
+        display: flex; /* Para controlar la hamburguesa */
+        align-items: center;
+        justify-content: flex-end; /* Alinea la hamburguesa a la derecha dentro de su grupo */
+        flex-wrap: nowrap; 
+        gap: 0; /* No necesitas gap aquí si solo la hamburguesa está visible */
+        order: 1; /* Asegura que esté en la primera fila con el logo */
+    }
+
+    .hamburger-menu-btn {
+        display: block; /* Ahora es visible */
+        margin-left: 0;
+    }
+
+    .main-nav {
+        display: none; /* Oculto por defecto */
+        flex-direction: column; /* Los enlaces se apilarán verticalmente */
+        width: 100%; /* Ocupa todo el ancho */
+        position: absolute; /* Se posiciona absolutamente */
+        top: 60px; /* Posiciona justo debajo del header (AJUSTA si tu header tiene otra altura en móvil) */
+        left: 0;
+        background-color: rgb(101, 67, 33); /* Fondo del menú desplegable */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        z-index: 999; /* Por debajo del botón, pero por encima del contenido */
+        padding: 20px 0;
+        text-align: center; /* Centra los enlaces */
+        transition: transform 0.3s ease-in-out; /* Animación de deslizamiento */
+        transform: translateY(-100%); /* Inicialmente fuera de la vista hacia arriba */
+        height: auto;
+        overflow-y: auto;
+        max-height: calc(100vh - 60px);
+    }
+
+    .main-nav.open {
+        display: flex; /* Cambia a flex para mostrarlo */
+        transform: translateY(0); /* Lo desliza a su posición visible */
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Asegura que los ítems de la lista se apilen */
+        width: 100%;
+        gap: 15px; /* Espacio entre los enlaces en el menú */
+        padding: 0;
+        margin: 0;
+    }
+
+    .main-nav ul li a {
+        padding: 12px 20px; /* Mayor área de click en móvil */
+        font-size: 1.1em; /* Ajuste de tamaño de fuente */
+        display: block; /* Hace que todo el ancho del li sea cliqueable */
+        color: white; /* Color del texto de los enlaces en el menú hamburguesa */
+    }
+
+    /* Estilos para la animación del icono de hamburguesa al abrirse */
+    .hamburger-menu-btn.open .hamburger-icon:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu-btn.open .hamburger-icon:nth-child(2) {
+        opacity: 0; /* Desvanece la línea del medio */
+    }
+    .hamburger-menu-btn.open .hamburger-icon:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    header ul {
+        gap: 15px; 
+        justify-content: center;
+        padding: 0; 
+    }
+
+    header nav a {
+        padding: 0 20px; 
+        height: 50px; 
+    }
+
+    .auth-page-main {
+        padding: 15px;
+        min-height: calc(100vh - 70px); /* Ajusta si tu header en móvil es de diferente altura */
+    }
+
+    .auth-container {
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+        min-height: 380px; /* Ajusta la altura mínima en móvil */
+    }
+
+    .form-box h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .input-group label {
+        font-size: 0.9em;
+    }
+
+    .input-group input {
+        padding: 10px 12px;
+        font-size: 0.95em;
+    }
+
+    .submit-btn {
+        padding: 12px;
+        font-size: 1em;
+    }
+
+    .switch-form-text {
+        font-size: 0.85em;
+    }
+}
