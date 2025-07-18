@@ -1,0 +1,701 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('images/cat-gif.gif');
+    font-family: 'Roboto Slab', serif;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #222;
+    min-height: 200vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3); /* Opacidad del 30% */
+    z-index: -1;
+    pointer-events: none;
+}
+
+header {
+    background-color: rgb(101, 67, 33);
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+header .auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 60%;
+}
+
+header .auth-buttons a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+}
+
+header .auth-buttons .login-button {
+    background-color: transparent;
+    color: white;
+}
+
+header .auth-buttons .login-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+header .auth-buttons .register-button {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+header .auth-buttons .register-button:hover {
+    background-color: #0056b3; /* Un tono más oscuro al pasar el mouse */
+    border-color: #0056b3;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-container img {
+    width: 50px;
+    height: auto;
+    display: block;
+    margin-right: 10px;
+}
+
+.logo-container h1 {
+    color: white;
+    font-size: 26px;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.logo-container h5 {
+    color: white;
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.nav-and-button-group {
+    display: flex;
+    align-items: center;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    padding: 20px;
+    gap: 27px;
+}
+
+header h4 {
+    color: white;
+    font-size: 2.2em;
+    text-align: center;
+    flex-grow: 1;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+header ul li a:hover {
+    color: fuchsia;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+header nav a {
+    background-color: orange;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 0 35px;
+    height: 100%;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: orangered;
+}
+
+.hero-section {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h2 {
+    font-size: 4.5em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    line-height: 1.3;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.cta-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+/* --- Estilos para la sección "¿Por Qué Elegir Bike CribPets?" --- */
+.why-choose-us-section {
+    padding: 60px 20px;
+    background-color: rgba(240, 240, 240, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+    position: relative;
+    z-index: 1;
+}
+
+.why-choose-us-section .content-wrapper {
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.why-choose-us-section .image-column {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.why-choose-us-section .image-column img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.why-choose-us-section .text-column {
+    flex: 1;
+    min-width: 300px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.why-choose-us-section .text-column h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.why-choose-us-section .text-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.why-choose-us-section .text-column ul li {
+    margin-bottom: 25px;
+}
+
+.why-choose-us-section .text-column ul li h3 {
+    font-size: 1.5em;
+    color: #007bff;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.why-choose-us-section .text-column ul li p {
+    font-size: 1em;
+    text-align: justify;
+    line-height: 1.6;
+    color: #555;
+}
+
+.spacer-section {
+    margin-top: 150px;
+}
+
+/* SECCION UOR MISSION */
+.our-mission-section {
+    padding: 60px 20px;
+    background-color: rgba(240, 240, 240, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+    position: relative;
+    z-index: 1;
+}
+
+.our-mission-section .content-wrapper {
+    display: flex;
+    gap: 40px;
+    max-width: 1100px;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.our-mission-section .image-column {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.our-mission-section .image-column img {
+    max-width: 100%;
+    width: 800px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.our-mission-section .text-column {
+    flex: 1;
+    min-width: 300px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: #333;
+    text-align: center;
+}
+
+.our-mission-section .text-column h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: none;
+}
+
+.our-mission-section .text-column p {
+    font-size: 1em;
+    text-align: justify;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+    text-shadow: none;
+}
+
+.our-mission-section .cta-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.our-mission-section .cta-button:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+/* --- ESTILOS PARA "BENEFICIOS DEL PASEO" (benefits-of-walking-section) EN ESCRITORIO --- */
+.benefits-of-walking-section {
+    padding: 80px 0;
+    background-color:#f0f0f0;
+    color: #333;
+}
+
+.benefits-of-walking-section .content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    gap: 50px;
+    flex-direction: row;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Invertimos el orden para que la imagen esté a la derecha y el texto a la izquierda en escritorio */
+.benefits-of-walking-section .text-column {
+    order: 1;
+    flex: 1;
+    min-width: 400px;
+}
+
+.benefits-of-walking-section .text-column h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2em;
+    color: #0056b3;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.benefits-of-walking-section .text-column p {
+    font-size: 1.3em;
+    text-align: justify;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+.benefits-of-walking-section .text-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits-of-walking-section .text-column ul li {
+    margin-bottom: 25px;
+    position: relative;
+    padding-left: 35px;
+}
+
+/* Puedes añadir un icono personalizado para los ítems de la lista si quieres */
+.benefits-of-walking-section .text-column ul li::before {
+    content: '🐾';
+    position: absolute;
+    left: 0;
+    color: #e99400;
+    font-size: 1.2em;
+    top: 5px;
+}
+
+
+.benefits-of-walking-section .text-column ul li h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5em;
+    color: #007bff;
+    margin-bottom: 8px;
+}
+
+.benefits-of-walking-section .text-column ul li p {
+    font-size: 1.05em;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 0;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        height: auto; 
+        padding: 10px 20px; 
+        justify-content: center; 
+        gap: 10px; 
+    }
+
+    header .logo-container {
+        width: 100%; 
+        justify-content: center; 
+        margin-bottom: 10px; 
+    }
+
+    header h4 {
+        font-size: 1.5em; 
+        width: 100%; 
+        order: -1; 
+    }
+
+    header .nav-and-button-group {
+        width: 100%;
+        justify-content: center; 
+        flex-wrap: wrap; 
+        gap: 15px; 
+    }
+
+    header ul {
+        gap: 15px; 
+        justify-content: center;
+        padding: 0; 
+    }
+
+    header nav a {
+        padding: 0 20px; 
+        height: 50px; 
+    }
+
+    header .auth-buttons {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    header .auth-buttons a {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .spacer-section {
+        height: 15vh; 
+        font-size: 1.8em; 
+    }
+
+    /* --- Estilos para la HERO SECTION en móviles --- */
+    .hero-section {
+        height: 60vh;
+        min-height: 400px;
+        padding: 25px 15px;
+    }
+
+    .hero-content h2 {
+        font-size: 2.2em;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    
+    /* --- Estilos para why-choose-us-section en móviles */
+    .why-choose-us-section .content-wrapper {
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 5px;
+        box-sizing: border-box;
+    }
+
+    .why-choose-us-section .image-column {
+        min-width: unset;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .why-choose-us-section .text-column {
+        min-width: unset;
+        width: 100%;
+        padding: 25px 20px;
+        box-sizing: border-box;
+    }
+
+    .why-choose-us-section .image-column img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* --- Estilos para our-mission-section en móviles */
+    .our-mission-section .content-wrapper {
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 5px;
+        box-sizing: border-box;
+    }
+    
+    .our-mission-section .image-column {
+        min-width: unset;
+        width: 100%;
+        max-width: 350px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 auto;
+        gap: 15px;
+    }
+
+    .our-mission-section .text-column {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .our-mission-section .image-column img {
+        width: 50%;
+        max-width: 250px;
+        height: auto;
+    }
+
+    .our-mission-section h2 {
+        font-size: 2.2em;
+    }
+
+    .our-mission-section p {
+        font-size: 1em;
+    }
+
+    /* --- AJUSTES PARA "BENEFICIOS DEL PASEO" (benefits-of-walking-section) SIN IMAGEN en móviles --- */
+    .benefits-of-walking-section {
+        padding: 40px 0;
+        background-color: #f0f0f0;
+    }
+
+    .benefits-of-walking-section .content-wrapper {
+        flex-direction: column; /* Mantiene la dirección vertical */
+        gap: 20px; /* Reduce un poco el espacio ya que solo hay texto */
+        width: 95%;
+        margin: 0 auto;
+        padding: 30px 20px;
+        box-sizing: border-box;
+        align-items: center; /* <--- Centra el contenido horizontalmente dentro del wrapper */
+    }
+
+    /* La columna de texto ahora ocupa todo el ancho disponible */
+    .benefits-of-walking-section .text-column {
+        order: unset;
+        width: 100%;
+        text-align: center; /* <--- Centra el texto dentro de la columna */
+    }
+    
+    .benefits-of-walking-section .text-column h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .benefits-of-walking-section .text-column p {
+        font-size: 0.95em;
+        margin-bottom: 25px;
+    }
+
+    /* Ajustes para la lista de beneficios */
+    .benefits-of-walking-section .text-column ul {
+        margin-top: 15px;
+        padding-left: 0; /* Asegúrate de que no haya padding izquierdo */
+        list-style-position: inside; /* Los puntos/números (si los hubiera) se muestran dentro del bloque de texto */
+    }
+    .benefits-of-walking-section .text-column ul li {
+        margin-bottom: 15px;
+        text-align: center; /* Centra cada ítem de la lista */
+        padding-left: 0; /* Elimina cualquier padding izquierdo que pudiera haber */
+    }
+    .benefits-of-walking-section .text-column ul li::before {
+        content: none; /* Asegúrate de que no aparezca la patita */
+    }
+    .benefits-of-walking-section .text-column ul li h3 {
+        font-size: 1.3em;
+    }
+    .benefits-of-walking-section .text-column ul li p {
+        font-size: 0.85em;
+    }
+
+    /* Oculta la columna de imagen si ya no está en el HTML */
+    .benefits-of-walking-section .image-column {
+        display: none;
+    }
+}
+
