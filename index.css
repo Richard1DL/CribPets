@@ -639,27 +639,29 @@ footer {
         font-size: 1em;
     }
 
-    /* --- AJUSTES PARA "BENEFICIOS DEL PASEO" (benefits-of-walking-section) SIN IMAGEN en móviles --- */
+    /* --- AJUSTES PARA "BENEFICIOS DEL PASEO" SIN IMAGEN en móviles --- */
     .benefits-of-walking-section {
         padding: 40px 0;
         background-color: #f0f0f0;
     }
 
     .benefits-of-walking-section .content-wrapper {
-        flex-direction: column; /* Mantiene la dirección vertical */
-        gap: 20px; /* Reduce un poco el espacio ya que solo hay texto */
+        flex-direction: column;
+        gap: 20px;
         width: 95%;
         margin: 0 auto;
         padding: 30px 20px;
         box-sizing: border-box;
-        align-items: center; /* <--- Centra el contenido horizontalmente dentro del wrapper */
+        align-items: center;
+        
     }
 
-    /* La columna de texto ahora ocupa todo el ancho disponible */
     .benefits-of-walking-section .text-column {
         order: unset;
         width: 100%;
-        text-align: center; /* <--- Centra el texto dentro de la columna */
+        text-align: center;
+        min-width: unset;
+        box-sizing: border-box;
     }
     
     .benefits-of-walking-section .text-column h2 {
@@ -675,16 +677,14 @@ footer {
     /* Ajustes para la lista de beneficios */
     .benefits-of-walking-section .text-column ul {
         margin-top: 15px;
-        padding-left: 0; /* Asegúrate de que no haya padding izquierdo */
-        list-style-position: inside; /* Los puntos/números (si los hubiera) se muestran dentro del bloque de texto */
+        list-style-position: inside;
     }
     .benefits-of-walking-section .text-column ul li {
         margin-bottom: 15px;
-        text-align: center; /* Centra cada ítem de la lista */
-        padding-left: 0; /* Elimina cualquier padding izquierdo que pudiera haber */
+        text-align: justify;
     }
     .benefits-of-walking-section .text-column ul li::before {
-        content: none; /* Asegúrate de que no aparezca la patita */
+      
     }
     .benefits-of-walking-section .text-column ul li h3 {
         font-size: 1.3em;
@@ -693,7 +693,6 @@ footer {
         font-size: 0.85em;
     }
 
-    /* Oculta la columna de imagen si ya no está en el HTML */
     .benefits-of-walking-section .image-column {
         display: none;
     }
