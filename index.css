@@ -625,6 +625,10 @@ footer {
         width: 100%;
     }
 
+    .our-misiion-section .text-column {
+        font-size: 1.4em;
+    }
+
     .our-mission-section .image-column img {
         width: 50%;
         max-width: 250px;
