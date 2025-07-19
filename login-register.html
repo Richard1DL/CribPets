@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión / Registrarse</title>
+    <link rel="stylesheet" href="login-register.css">
+</head>
+<body>
+    <header>
+    <a href="index.html" class="logo-container">
+        <img src="images/logo-crib-pets.jpg" alt="Image">
+        <div class="logo-text">
+            <h1>CribPets</h1>
+            <h5>EL PASEO IDEAL PARA TU MASCOTA</h5>
+        </div>
+    </a>
+
+    <div class="nav-and-button-group">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="">Planes</a></li>
+                <li><a href="">Nosotros</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger-menu-btn" aria-label="Abrir menú de navegación">
+            <span class="hamburger-icon"></span>
+            <span class="hamburger-icon"></span>
+            <span class="hamburger-icon"></span>
+        </button>
+    </div>
+</header>
+
+    <main class="auth-page-main">
+        <div class="auth-container">
+            <div class="form-box login-box active" id="loginForm">
+                <h2>Iniciar Sesión</h2>
+                <form>
+                    <div class="input-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Entrar</button>
+                    <p class="switch-form-text">¿No tienes una cuenta? <a href="#" id="showRegister">Regístrate</a></p>
+                </form>
+            </div>
+
+            <div class="form-box register-box" id="registerForm">
+                <h2>Registrarse</h2>
+                <form>
+                    <div class="input-group">
+                        <label for="register-name">Nombre</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="register-password">Contraseña</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="register-confirm-password">Confirmar Contraseña</label>
+                        <input type="password" id="register-confirm-password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Registrarme</button>
+                    <p class="switch-form-text">¿Ya tienes una cuenta? <a href="#" id="showLogin">Inicia Sesión</a></p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="login-register.js"></script>
+</body>
+</html>
